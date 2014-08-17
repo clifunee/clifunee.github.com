@@ -1,0 +1,12 @@
+@CHARSET "EUC-KR";
+body
+{
+	background:#555555;
+	margin:20px;
+}
+
+#CANVAS_1
+{
+	background:#ffffff;
+	border:1px solid #000000;
+}
