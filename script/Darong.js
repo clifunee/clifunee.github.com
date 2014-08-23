@@ -1,79 +1,12 @@
 
-//var svgMap;
-//svgMap = document.getElementById("Layer_1");
-var JeJuDo = document.getElementById("JeJuDo");
-//var JeJuSi_1 = document.getElementById("JeJuSi");
-
-
-var SeoGuiPoSi = document.getElementById("path3033");
-
-var daejeon1 = document.getElementById("daejeon1");
-var daejeon2 = document.getElementById("daejeon2");
-
-var DaeJeon = document.getElementById("DaeJeon");
-
-function init()
-{
-//	var Seoul=document.getElementById("Seoul");
-//	var Seoul_Kangdong=document.getElementById("Seoul_Kangdong");
-//	var Seoul_Songpa=document.getElementById("Seoul_Songpa");
-//	var Seoul_Kwangjin=document.getElementById("Seoul_Kwangjin");
-//	var Seoul_Joongrang=document.getElementById("Seoul_Joongrang");
-//	var Seoul_Nowon=document.getElementById("Seoul_Nowon");
-//	var Seoul_Kangnam=document.getElementById("Seoul_Kangnam");
-//	var Seoul_Seongdong=document.getElementById("Seoul_Seongdong");
-//	var Seoul_Dongdaemoon=document.getElementById("Seoul_Dongdaemoon");
-//	var Seoul_Seongbuk=document.getElementById("Seoul_Seongbuk");
-//	var Seoul_Kangbuk=document.getElementById("Seoul_Kangbuk");
-//	var Seoul_Dobong=document.getElementById("Seoul_Dobong");
-//	var Seoul_Seocho=document.getElementById("Seoul_Seocho");
-//	var Seoul_Yongsan=document.getElementById("Seoul_Yongsan");
-//	var Seoul_Joong=document.getElementById("Seoul_Joong");
-//	var Seoul_Jongro=document.getElementById("Seoul_Jongro");
-//	var Seoul_Eunpyeong=document.getElementById("Seoul_Eunpyeong");
-//	var Seoul_Seodaemoon=document.getElementById("Seoul_Seodaemoon");
-//	var Seoul_Mapo=document.getElementById("Seoul_Mapo");
-//	var Seoul_Kangseo=document.getElementById("Seoul_Kangseo");
-//	var Seoul_Yangcheon=document.getElementById("Seoul_Yangcheon");
-//	var Seoul_Kuro=document.getElementById("Seoul_Kuro");
-//	var Seoul_Keuncheon=document.getElementById("Seoul_Keuncheon");
-//	var Seoul_Kwanahk=document.getElementById("Seoul_Kwanahk");
-//	var Seoul_Dongjahk=document.getElementById("Seoul_Dongjahk");
-//	var Seoul_Yeongdeungpo=document.getElementById("Seoul_Yeongdeungpo");
-//
-//	
-//	
-}
-
-function funcFill()
-{
-	var style = window.getComputedStyle(JeJuSi);
-	var color = colorToHex(style.fill);
-
-	if (color == "#b9b9b9")
-		JeJuSi.style.fill = "#ffff00";
-	else if (color == "#ffff00")
-		JeJuSi.style.fill = "#b9b9b9";
-	else
-		alert("not grey, yellow");
-	
-};
-
 function modifyColor(cityName)
 {
-//	alert("cityName"+cityName);
 	var city = window.getComputedStyle(cityName);
-//	alert("city"+city);
-//	alert("city"+city.fill);
 	var color = colorToHex(city.fill);
-//	alert("color "+color);
 
-	if (color == "#b9b9b9")
-		cityName.style.fill = "#ffff00";
-	else if (color == "#ffff00")
-		cityName.style.fill = "#b9b9b9";
-	else
-		alert("not grey, yellow\n"+city.fill);
+	if (color == "#b9b9b9")	cityName.style.fill = "#ffff00";
+	else if (color == "#ffff00")	cityName.style.fill = "#b9b9b9";
+	else	cityName.style.fill = "#ffff00";
 	
 };
 
