@@ -1,67 +1,421 @@
-/**
- * 
- */
-/*
-var can1 = document.getElementById("CANVAS_1");
-var context1 = can1.getContext("2d");
-context1.fillStyle = "ffffff";
-context1.fillRect(50, 50, 360, 240);
-*/
-var svgMap;
+
+//var svgMap;
 //svgMap = document.getElementById("Layer_1");
-//alert("svgMap"+svgMap);
+var JeJuDo = document.getElementById("JeJuDo");
+//var JeJuSi_1 = document.getElementById("JeJuSi");
 
-//var JeJuDo = document.getElementById("JeJuDo");
-//var JeJuSi_1 = document.getElementById("JeJuSi_1");
 
-var JeJuSi = document.getElementById("JeJuSi");
-//alert("JeJuSi"+JeJuSi);
+var SeoGuiPoSi = document.getElementById("path3033");
 
-function colorToHex(color) {
-    if (color.substr(0, 1) === '#') {
-        return color;
-    }
-    var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
+var daejeon1 = document.getElementById("daejeon1");
+var daejeon2 = document.getElementById("daejeon2");
 
-    var red = parseInt(digits[2]);
-    var green = parseInt(digits[3]);
-    var blue = parseInt(digits[4]);
+var DaeJeon = document.getElementById("DaeJeon");
 
-    var rgb = blue | (green << 8) | (red << 16);
-    
-//    alert (digits[1] + '#' + rgb.toString(16));
-    return digits[1] + '#' + rgb.toString(16);
-};
+function init()
+{
+//	var Seoul=document.getElementById("Seoul");
+//	var Seoul_Kangdong=document.getElementById("Seoul_Kangdong");
+//	var Seoul_Songpa=document.getElementById("Seoul_Songpa");
+//	var Seoul_Kwangjin=document.getElementById("Seoul_Kwangjin");
+//	var Seoul_Joongrang=document.getElementById("Seoul_Joongrang");
+//	var Seoul_Nowon=document.getElementById("Seoul_Nowon");
+//	var Seoul_Kangnam=document.getElementById("Seoul_Kangnam");
+//	var Seoul_Seongdong=document.getElementById("Seoul_Seongdong");
+//	var Seoul_Dongdaemoon=document.getElementById("Seoul_Dongdaemoon");
+//	var Seoul_Seongbuk=document.getElementById("Seoul_Seongbuk");
+//	var Seoul_Kangbuk=document.getElementById("Seoul_Kangbuk");
+//	var Seoul_Dobong=document.getElementById("Seoul_Dobong");
+//	var Seoul_Seocho=document.getElementById("Seoul_Seocho");
+//	var Seoul_Yongsan=document.getElementById("Seoul_Yongsan");
+//	var Seoul_Joong=document.getElementById("Seoul_Joong");
+//	var Seoul_Jongro=document.getElementById("Seoul_Jongro");
+//	var Seoul_Eunpyeong=document.getElementById("Seoul_Eunpyeong");
+//	var Seoul_Seodaemoon=document.getElementById("Seoul_Seodaemoon");
+//	var Seoul_Mapo=document.getElementById("Seoul_Mapo");
+//	var Seoul_Kangseo=document.getElementById("Seoul_Kangseo");
+//	var Seoul_Yangcheon=document.getElementById("Seoul_Yangcheon");
+//	var Seoul_Kuro=document.getElementById("Seoul_Kuro");
+//	var Seoul_Keuncheon=document.getElementById("Seoul_Keuncheon");
+//	var Seoul_Kwanahk=document.getElementById("Seoul_Kwanahk");
+//	var Seoul_Dongjahk=document.getElementById("Seoul_Dongjahk");
+//	var Seoul_Yeongdeungpo=document.getElementById("Seoul_Yeongdeungpo");
+//
+//	
+//	
+}
 
 function funcFill()
 {
-	var style = window.getComputedStyle(JeJuSi, null).fill;
-	var color = colorToHex(style);
+	var style = window.getComputedStyle(JeJuSi);
+	var color = colorToHex(style.fill);
 
-	if (color == "#b9b9b9") {
-//		alert("grey");
+	if (color == "#b9b9b9")
 		JeJuSi.style.fill = "#ffff00";
-	}
-	else if (color == "#ffff00"){
-//		alert("yellow");
+	else if (color == "#ffff00")
 		JeJuSi.style.fill = "#b9b9b9";
-	}
 	else
 		alert("not grey, yellow");
-}
-function funcUnFill()
-{
-	JeJuSi.style.fill = "#B9B9B9";
-}
+	
+};
 
-JeJuSi.onclick = funcFill();
-JeJuSi.ondblclick = funcUnFill();
-JeJuSi.addEventListener("click", funcFill, false);
-JeJuSi.addEventListener("dblclick", funcUnFill, false);
+function modifyColor(cityName)
+{
+//	alert("cityName"+cityName);
+	var city = window.getComputedStyle(cityName);
+//	alert("city"+city);
+//	alert("city"+city.fill);
+	var color = colorToHex(city.fill);
+//	alert("color "+color);
+
+	if (color == "#b9b9b9")
+		cityName.style.fill = "#ffff00";
+	else if (color == "#ffff00")
+		cityName.style.fill = "#b9b9b9";
+	else
+		alert("not grey, yellow\n"+city.fill);
+	
+};
+
+function addToListener()
+{
+	Seoul.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Kangdong.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Songpa.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Kwangjin.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Joongrang.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Nowon.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Kangnam.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Seongdong.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Dongdaemoon.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Seongbuk.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Kangbuk.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Dobong.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Seocho.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Yongsan.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Joong.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Jongro.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Eunpyeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Seodaemoon.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Mapo.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Kangseo.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Yangcheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Kuro.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Keuncheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Kwanahk.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Dongjahk.addEventListener("click", function(){modifyColor(this)}, false);
+	Seoul_Yeongdeungpo.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ganghwa.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ganghwa_path2891.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ganghwa_path2893.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ganghwa_path2895.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ganghwa_path2897.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Gyeyang.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Bopyeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Seo.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Yeonsu.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Nam.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Namdong.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Dong.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Joong.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Joong_path2907.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Joong_path2909.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Joong_path2911.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ongjin.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ongjin_path2914.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ongjin_path2916.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ongjin_path2918.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ongjin_path2920.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ongjin_path2922.addEventListener("click", function(){modifyColor(this)}, false);
+	Incheon_Ongjin_path2924.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Kimpo.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Goyang.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Paju.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Yangju.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Eujeongbu.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Dongducheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Yeoncheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Pocheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Guri.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Namyangju.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Hanam.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Yangpyeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Gapyeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Yeoju.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Kwangju.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Seongnam.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Kwacheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Euwang.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Yongin.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Anyang.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Bucheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Kwangmyeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Siheung.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Icheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Suwon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Goonpo.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Ahnsan.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki__Osan.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Pyeongteck.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Ansung.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Hwasung.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Hwasung_path2958.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeonki_Hwasung_path2960.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Cheolwon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Hwacheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Chooncheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Hongcheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Hoeingsung.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Wonju.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Yanggoo.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Inje.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Gosung.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Sokcho.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Yangyang.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Pyeongchang.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Kangreung.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Jeonsun.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Donghae.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Yeongwall.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Taeback.addEventListener("click", function(){modifyColor(this)}, false);
+	Gangwon_Samcheok.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook_Jincheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook_Umsung.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook_Choongjoo.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook_Jecheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook_Danyang.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook_Goisan.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook_Jeungpyeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook_Cheongju.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook_Boeun.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook_Ockcheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongbook_Yeongdong.addEventListener("click", function(){modifyColor(this)}, false);
+	Daejeon.addEventListener("click", function(){modifyColor(this)}, false);
+	Daejeon_Yoosung.addEventListener("click", function(){modifyColor(this)}, false);
+	Daejeon_Seo.addEventListener("click", function(){modifyColor(this)}, false);
+	Daejeon_Joong.addEventListener("click", function(){modifyColor(this)}, false);
+	Daejeon_Daedeock.addEventListener("click", function(){modifyColor(this)}, false);
+	Daejeon_Dong.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Cheonahn.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Gyeryong.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Gongju.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Ahsan.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Dangjin.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Yesan.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Seosan.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Seosan_path3007.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Seosan_path3009.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Taehahn.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Taehahn_path3012.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Taehahn_path3014.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Hongsung.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Cheongyang.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Nonsan.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Geumsan.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Booyeo.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Boryeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Boryeong_path3022.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Boryeong_path3024.addEventListener("click", function(){modifyColor(this)}, false);
+	Choongnam_Seocheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeju.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeju_Jeju.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeju_Jeju_Jeju.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeju_Jeju_path3030.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeju_Seoguipho.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeju_Seoguipho_path3033.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeju_Seoguipho_path3035.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_MoonGyeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Sangjoo.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Yecheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Yeongjoo.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Bonghwa.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Yeongyang.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Wooljin.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Ahndong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Euisung.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Gimcheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Gumi.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Sungjoo.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Goryeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Chillgok.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Goonwui.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Yeongduck.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Cheongsong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Phohang.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Yeongcheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Kyeongsan.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Chungdo.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Gyeongju.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Wooleung.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Wooleung_path3061.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongbook_Wooleung_path3063.addEventListener("click", function(){modifyColor(this)}, false);
+	Daegu.addEventListener("click", function(){modifyColor(this)}, false);
+	Daegu_Dong.addEventListener("click", function(){modifyColor(this)}, false);
+	Daegu_Book.addEventListener("click", function(){modifyColor(this)}, false);
+	Daegu_Suseong.addEventListener("click", function(){modifyColor(this)}, false);
+	Daegu_Joong.addEventListener("click", function(){modifyColor(this)}, false);
+	Daegu_Seo.addEventListener("click", function(){modifyColor(this)}, false);
+	Daegu_Nam.addEventListener("click", function(){modifyColor(this)}, false);
+	Daegu_Dalseo.addEventListener("click", function(){modifyColor(this)}, false);
+	Daegu_Dalseong.addEventListener("click", function(){modifyColor(this)}, false);
+	Daegu_Dalseong_path3074.addEventListener("click", function(){modifyColor(this)}, false);
+	Daegu_Dalseong_path3076.addEventListener("click", function(){modifyColor(this)}, false);
+	Woolsan.addEventListener("click", function(){modifyColor(this)}, false);
+	Woolsan_Book.addEventListener("click", function(){modifyColor(this)}, false);
+	Woolsan_Joong.addEventListener("click", function(){modifyColor(this)}, false);
+	Woolsan_Dong.addEventListener("click", function(){modifyColor(this)}, false);
+	Woolsan_Nam.addEventListener("click", function(){modifyColor(this)}, false);
+	Woolsan_Wooljoo.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Geochang.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Hapcheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Hamyang.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Changnyeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Millyang.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Yangsan.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Gimhae.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Changwon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Hamahn.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Euiryeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Sancheong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Jinju.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Gosung.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Geojei.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Geojei_path3099.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Geojei_path3101.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Sacheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Hadong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Namhae.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Namhae_path3106.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Namhae_path3108.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Tongyeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Tongyeong_path3111.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Tongyeong_path3113.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Tongyeong_path3115.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Tongyeong_path3117.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Tongyeong_path3119.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Tongyeong_path3121.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Tongyeong_path3123.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Tongyeong_path3125.addEventListener("click", function(){modifyColor(this)}, false);
+	Gyeongnam_Tongyeong_path3127.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Gijang.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Book.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Geumjeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Dongrae.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Gangseo.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Gangseo_path3135.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Gangseo_path3137.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Gangseo_path3139.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Sasang.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Saha.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Yeonjei.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Haewoondae.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Busanjin.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Sooyeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Nam.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Dong.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Seo.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Joong.addEventListener("click", function(){modifyColor(this)}, false);
+	Busan_Yeongdo.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Moojoo.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Jinahan.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Jeonju.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Jeonju_path3156.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Jeonju_path3158.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Wanju.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Wanju_path3161.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Wanju_path3163.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Icksan.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Jangsu.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Namwon.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Imsil.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Soonchang.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Jeongeup.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Gimjei.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_BooAhn.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Gochang.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Goonsan.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Goonsan_path3175.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonbuk_Goonsan_path3177.addEventListener("click", function(){modifyColor(this)}, false);
+	Gwangju.addEventListener("click", function(){modifyColor(this)}, false);
+	Gwangju_Kwangsan.addEventListener("click", function(){modifyColor(this)}, false);
+	Gwangju_Book.addEventListener("click", function(){modifyColor(this)}, false);
+	Gwangju_Dong.addEventListener("click", function(){modifyColor(this)}, false);
+	Gwangju_Nam.addEventListener("click", function(){modifyColor(this)}, false);
+	Gwangju_Seo.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Goorye.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Goksung.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Damyang.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Jangsung.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Yeongkwang.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Hampyeong.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Sooncheon.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Gwangyang.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Gwangyang_path3194.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Gwangyang_path3196.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Yeosoo.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Yeosoo_path3199.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Yeosoo_path3201.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Yeosoo_path3203.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Yeosoo_path3205.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Hwasoon.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Naju.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Mooahn.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Mooahn_path3210.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Mooahn_path3212.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Mooahn_path3214.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Mooahn_path3216.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Mokpho.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Yeongahm.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Boseong.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Goheung.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Goheung_path3222.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Goheung_path3224.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Goheung_path3226.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Goheung_path3228.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Jangheung.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Gangjin.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Haenam.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Jindo.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Jindo_path3234.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Jindo_path3236.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Wando.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Wando_path3239.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Wando_path3241.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Wando_path3243.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Wando_path3245.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Wando_path3247.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Wando_path3249.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Wando_path3251.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Wando_path3253.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Wando_path3255.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3258.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3260.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3262.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3264.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3266.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3268.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3270.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3272.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3274.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3276.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3278.addEventListener("click", function(){modifyColor(this)}, false);
+	Jeonnam_Shinahn_path3280.addEventListener("click", function(){modifyColor(this)}, false);
+	Sejong.addEventListener("click", function(){modifyColor(this)}, false);
+
+}
 
 window.onload=function(){
-//	JeJuSi.style.fill = "yellow";
-//	var style1 = window.getComputedStyle(JeJuSi, null);
-//	alert(colorToHex(style1.fill));
+//	alert("onload");
 	
-}
+	addToListener();};
