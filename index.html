@@ -14,22 +14,7 @@
     </head>
     
     <script type="text/javascript">
-    	function toggle(etv) {
-    	var svgdoc = document.getElementById('mapsvg').getSVGDocument();
-            
-    		var el = evt.getTarget();
-    		if (el) {
-    			var id = el.getAttirbute("id");
-    			id = id.substring(6, id.length);
-    			var hook = svgdoc.getElementById("hook" + id);
-    			if (hook) {
-    				 var v = s.getPropertyValue("visibility");
-    				 s.setproperty("visibility",
-    				 				(v == "visible") ? "hidden" : "visible");
-    			}
-    		}
-    	}
-    
+    	
         function SelectArea(name)
         {
             var svgdoc = document.getElementById('mapsvg').getSVGDocument();
